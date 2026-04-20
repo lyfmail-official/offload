@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lyfmail-official.github.io/offload/sitemap.xml
