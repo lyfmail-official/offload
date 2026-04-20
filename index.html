@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#070a1f">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="A privacy-first ceremonial ritual to empty your mind before sleep. Binaural beats, dream journal, and zero cloud storage.">
+  <meta name="keywords" content="brain dump, sleep ritual, mindfulness, journaling, binaural beats, theta waves, lucid dreams, mental health, privacy, PWA">
+  <meta name="author" content="LYF Mail">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Offload — Pre-Sleep Brain Release">
+  <meta property="og:description" content="A privacy-first ceremonial ritual to empty your mind before sleep. Binaural beats, dream journal, and zero cloud storage.">
+  <meta property="og:image" content="https://lyfmail-official.github.io/offload/og-image.png">
+  <meta property="og:url" content="https://lyfmail-official.github.io/offload/">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Offload — Pre-Sleep Brain Release">
+  <meta name="twitter:description" content="A privacy-first ceremonial ritual to empty your mind before sleep.">
+  <meta name="twitter:image" content="https://lyfmail-official.github.io/offload/og-image.png">
+
+  <!-- PWA -->
+  <link rel="manifest" href="./manifest.json">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
+
+  <title>Offload — Pre-Sleep Brain Release | LYF Mail</title>
+
+  <link rel="stylesheet" href="./css/style.css">
+
+  <!-- Preload critical assets -->
+  <link rel="preload" href="./icon-192.png" as="image">
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="logo">
+        <div class="logo-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 19V5M5 12l7-7 7 7"/>
+          </svg>
+        </div>
+        <span>Offload</span>
+      </div>
+      <div class="moon-phase" id="moon-phase" aria-label="Current moon phase">
+        <img id="moon-img" src="./moon-new-moon.png" alt="" width="28" height="28" loading="lazy">
+        <span>
+          <span id="moon-name">New Moon</span>
+          <span class="caption" id="moon-illumination" style="margin-left: 4px;">0% illuminated</span>
+        </span>
+      </div>
+    </header>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+    <!-- ============ VIEWS ============ -->
+
+    <!-- 1. Landing View -->
+    <section class="view active" id="view-landing" aria-label="Landing page">
+      <div class="landing-content">
+        <h1 class="landing-title">Offload</h1>
+        <p class="landing-subtitle">Release your thoughts. Rest deeply.</p>
+
+        <!-- Breathing Animation -->
+        <div class="breathing-container" aria-hidden="true">
+          <div class="orb orb-purple"></div>
+          <div class="orb orb-teal"></div>
+          <div class="orb orb-amber"></div>
+        </div>
+
+        <!-- Sleep Tip -->
+        <div class="sleep-tip">
+          <div class="sleep-tip-label">Tonight's Sleep Tip</div>
+          <p class="sleep-tip-text" id="sleep-tip-text">Loading tip...</p>
+        </div>
+
+        <!-- CTAs -->
+        <div style="display: flex; flex-direction: column; gap: var(--space-md); width: 100%; max-width: 320px;">
+          <button class="btn btn-primary w-full" id="btn-begin" aria-label="Begin brain dump session">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 19V5M5 12l7-7 7 7"/>
+            </svg>
+            Begin Offload
+          </button>
+          <button class="btn btn-secondary w-full" id="btn-pmr" aria-label="Open progressive muscle relaxation guide">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+            </svg>
+            Progressive Muscle Relaxation
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Brain Dump View -->
+    <section class="view" id="view-dump" aria-label="Brain dump session">
+      <!-- Timer -->
+      <div class="timer-container mb-lg">
+        <svg class="timer-ring" width="200" height="200" viewBox="0 0 200 200" aria-hidden="true">
+          <defs>
+            <linearGradient id="timerGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#7c6fae"/>
+              <stop offset="100%" style="stop-color:#2a9d8f"/>
+            </linearGradient>
+          </defs>
+          <circle class="timer-ring-bg" cx="100" cy="100" r="90"/>
+          <circle class="timer-ring-progress" id="timer-ring-progress" cx="100" cy="100" r="90"/>
+        </svg>
+        <div class="timer-text" id="timer-text" role="timer" aria-label="Session timer">5:00</div>
+      </div>
+
+      <!-- Sentiment Badge -->
+      <div class="text-center mb-md">
+        <span class="sentiment-badge sentiment-neutral" id="sentiment-badge">Calm</span>
+      </div>
+
+      <!-- Textarea -->
+      <div class="flex-1" style="position: relative;">
+        <textarea
+          class="textarea w-full"
+          id="dump-textarea"
+          placeholder="What's on your mind? Release everything here..."
+          aria-label="Brain dump text area"
+        ></textarea>
+        <div class="caption" id="word-count" style="position: absolute; bottom: var(--space-md); right: var(--space-md);">0 words</div>
+      </div>
+
+      <!-- Toolbar -->
+      <div class="dump-toolbar">
+        <div class="toolbar-group">
+          <button class="btn btn-icon" id="btn-pink-noise" title="Toggle pink noise" aria-label="Toggle pink noise">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+              <path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/>
+            </svg>
+          </button>
+          <button class="btn btn-icon" id="btn-binaural" title="Toggle binaural beats (4Hz theta)" aria-label="Toggle binaural beats">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M2 10v4M6 6v12M10 3v18M14 8v8M18 5v14M22 10v4"/>
+            </svg>
+          </button>
+          <button class="btn btn-icon" id="btn-voice" title="Voice input" aria-label="Start voice input">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/>
+              <path d="M19 10v2a7 7 0 01-14 0v-2M12 19v4M8 23h8"/>
+            </svg>
+          </button>
+        </div>
+        <button class="btn btn-ghost" id="btn-focus">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+          Focus
+        </button>
+        <button class="btn btn-ghost" id="btn-end-early">End Early</button>
+      </div>
+    </section>
+
+    <!-- Focus Mode Overlay -->
+    <div class="focus-mode hidden" id="focus-overlay" aria-label="Focus mode">
+      <textarea
+        class="focus-textarea"
+        id="focus-textarea"
+        placeholder="Just write..."
+        aria-label="Focus mode text area"
+      ></textarea>
+      <div class="focus-toolbar">
+        <button class="btn btn-ghost" id="btn-exit-focus">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+          Exit Focus
+        </button>
+        <span class="caption" style="color: var(--text-muted);">Distraction-free writing</span>
+      </div>
+    </div>
+
+    <!-- 3. Ceremony View -->
+    <section class="view" id="view-ceremony" aria-label="Closing ceremony">
+      <div class="ceremony-view" id="ceremony-container">
+        <canvas class="ceremony-canvas" id="ceremony-canvas" aria-hidden="true"></canvas>
+        <div class="ceremony-content">
+          <div class="ceremony-seal" aria-hidden="true">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+              <path d="M20 6L9 17l-5-5"/>
+            </svg>
+          </div>
+          <h2 style="font-size: var(--font-h2); margin-bottom: var(--space-sm);">Released</h2>
+          <p style="color: var(--text-secondary);">Your thoughts have been sealed for the night.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Intention View -->
+    <section class="view" id="view-intention" aria-label="Set your intention">
+      <div class="text-center mb-xl">
+        <h2 style="font-size: var(--font-h2); margin-bottom: var(--space-sm);">Set Your Intention</h2>
+        <p style="color: var(--text-secondary);">Close your session with purpose.</p>
+      </div>
+
+      <!-- AI Intention -->
+      <div class="intention-display">
+        <p class="caption" style="color: var(--accent-purple-light); margin-bottom: var(--space-xs); text-transform: uppercase; letter-spacing: 0.05em; font-size: 11px;" id="intention-category">Based on your reflection</p>
+        <p class="intention-text" id="ai-intention-text">I release today and welcome peaceful rest.</p>
+      </div>
+
+      <!-- Custom Intention -->
+      <div class="mb-lg">
+        <label class="caption" style="display: block; margin-bottom: var(--space-sm); color: var(--text-muted);">Or write your own:</label>
+        <textarea class="textarea" id="intention-text" placeholder="My intention for tonight is..." style="min-height: 60px;"></textarea>
+      </div>
+
+      <!-- Energy Rating -->
+      <div class="mb-lg">
+        <label class="caption" style="display: block; margin-bottom: var(--space-sm); color: var(--text-muted);">How do you feel now?</label>
+        <div class="star-rating" id="star-rating" role="group" aria-label="Energy rating">
+          <svg class="star" viewBox="0 0 24 24" fill="currentColor" tabindex="0" role="button" aria-label="1 star">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+          <svg class="star" viewBox="0 0 24 24" fill="currentColor" tabindex="0" role="button" aria-label="2 stars">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+          <svg class="star" viewBox="0 0 24 24" fill="currentColor" tabindex="0" role="button" aria-label="3 stars">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+          <svg class="star" viewBox="0 0 24 24" fill="currentColor" tabindex="0" role="button" aria-label="4 stars">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+          <svg class="star" viewBox="0 0 24 24" fill="currentColor" tabindex="0" role="button" aria-label="5 stars">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Gratitude -->
+      <div class="mb-xl">
+        <label class="caption" style="display: block; margin-bottom: var(--space-sm); color: var(--text-muted);">One thing you're grateful for:</label>
+        <textarea class="textarea gratitude-input" id="gratitude-text" placeholder="I am grateful for..."></textarea>
+      </div>
+
+      <button class="btn btn-primary w-full" id="btn-save-session">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z"/>
+          <polyline points="17 21 17 13 7 13 7 21"/>
+          <polyline points="7 3 7 8 15 8"/>
+        </svg>
+        Save Session
+      </button>
+    </section>
+
+    <!-- 5. Archive View -->
+    <section class="view" id="view-archive" aria-label="Session archive">
+      <h2 style="font-size: var(--font-h2); margin-bottom: var(--space-lg);">Archive</h2>
+      <div id="archive-list">
+        <div class="empty-state">
+          <div class="empty-state-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 6v6l4 2"/>
+              <circle cx="12" cy="12" r="10"/>
+            </svg>
+          </div>
+          <p>No sessions yet. Begin your first offload.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Dreams View -->
+    <section class="view" id="view-dreams" aria-label="Dream journal">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-lg);">
+        <h2 style="font-size: var(--font-h2);">Dream Journal</h2>
+        <button class="btn btn-icon" id="btn-new-dream" aria-label="Record new dream">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="5" x2="12" y2="19"/>
+            <line x1="5" y1="12" x2="19" y2="12"/>
+          </svg>
+        </button>
+      </div>
+      <div id="dreams-list">
+        <div class="empty-state">
+          <div class="empty-state-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+            </svg>
+          </div>
+          <p>No dreams recorded yet.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Stats View -->
+    <section class="view" id="view-stats" aria-label="Sleep insights">
+      <h2 style="font-size: var(--font-h2); margin-bottom: var(--space-lg);">Sleep Insights</h2>
+
+      <!-- Stats Grid -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-value" id="stat-sessions">0</div>
+          <div class="stat-label">Sessions</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="stat-words">0</div>
+          <div class="stat-label">Words Released</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="stat-energy">—</div>
+          <div class="stat-label">Avg Energy</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value" id="stat-streak">0 days</div>
+          <div class="stat-label">Streak</div>
+        </div>
+      </div>
+
+      <!-- 7-Day Chart -->
+      <div class="chart-container">
+        <h3 style="font-size: var(--font-body); color: var(--text-secondary); margin-bottom: var(--space-md);">Last 7 Days</h3>
+        <canvas id="stats-chart" style="width: 100%; height: 160px;"></canvas>
+      </div>
+
+      <!-- Word Cloud -->
+      <div class="chart-container">
+        <h3 style="font-size: var(--font-body); color: var(--text-secondary); margin-bottom: var(--space-md);">Word Cloud</h3>
+        <div class="word-cloud" id="word-cloud">
+          <p class="caption" style="text-align: center; color: var(--text-muted);">Write more to generate your word cloud</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Settings View -->
+    <section class="view" id="view-settings" aria-label="Settings">
+      <h2 style="font-size: var(--font-h2); margin-bottom: var(--space-lg);">Settings</h2>
+
+      <!-- Timer -->
+      <div class="settings-section">
+        <p class="settings-section-title">Timer Duration</p>
+        <div class="duration-selector" role="radiogroup" aria-label="Timer duration">
+          <button class="duration-option" data-minutes="3" role="radio" aria-checked="false">3 min</button>
+          <button class="duration-option active" data-minutes="5" role="radio" aria-checked="true">5 min</button>
+          <button class="duration-option" data-minutes="7" role="radio" aria-checked="false">7 min</button>
+          <button class="duration-option" data-minutes="10" role="radio" aria-checked="false">10 min</button>
+          <button class="duration-option" data-minutes="15" role="radio" aria-checked="false">15 min</button>
+        </div>
+      </div>
+
+      <!-- Audio -->
+      <div class="settings-section">
+        <p class="settings-section-title">Audio</p>
+        <div class="settings-item">
+          <div>
+            <div class="settings-item-label">Ambient Sound</div>
+            <div class="settings-item-desc">Pink noise generator</div>
+          </div>
+          <button class="toggle active" id="toggle-audio" role="switch" aria-checked="true" aria-label="Toggle ambient sound"></button>
+        </div>
+        <div class="settings-item">
+          <div>
+            <div class="settings-item-label">Binaural Beats</div>
+            <div class="settings-item-desc">4Hz theta waves</div>
+          </div>
+          <button class="toggle" id="toggle-binaural" role="switch" aria-checked="false" aria-label="Toggle binaural beats"></button>
+        </div>
+      </div>
+
+      <!-- Notifications -->
+      <div class="settings-section">
+        <p class="settings-section-title">Reminders</p>
+        <div class="settings-item">
+          <div>
+            <div class="settings-item-label">Bedtime Reminder</div>
+            <div class="settings-item-desc">Daily notification</div>
+          </div>
+          <button class="toggle" id="toggle-notifications" role="switch" aria-checked="false" aria-label="Toggle bedtime reminder"></button>
+        </div>
+        <div class="settings-item" style="margin-top: var(--space-sm);">
+          <div>
+            <div class="settings-item-label">Reminder Time</div>
+          </div>
+          <input type="time" id="reminder-time" class="input" value="21:00" style="width: auto;">
+        </div>
+      </div>
+
+      <!-- Privacy -->
+      <div class="settings-section">
+        <p class="settings-section-title">Privacy</p>
+        <div class="settings-item">
+          <div>
+            <div class="settings-item-label">Encryption</div>
+            <div class="settings-item-desc">AES-256-GCM with passphrase</div>
+          </div>
+          <button class="toggle" id="toggle-encryption" role="switch" aria-checked="false" aria-label="Toggle encryption"></button>
+        </div>
+        <div class="settings-item hidden" id="passphrase-input">
+          <input type="password" class="input passphrase-input" placeholder="Enter passphrase (min 8 chars)" style="flex: 1; margin-right: var(--space-sm);">
+          <button class="btn btn-primary" id="btn-set-passphrase" style="min-height: 40px; padding: var(--space-sm) var(--space-md);">Set</button>
+        </div>
+      </div>
+
+      <!-- Data -->
+      <div class="settings-section">
+        <p class="settings-section-title">Data</p>
+        <div class="export-import-group">
+          <button class="btn btn-secondary" id="btn-export">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+            </svg>
+            Export
+          </button>
+          <button class="btn btn-secondary" id="btn-import">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/>
+            </svg>
+            Import
+          </button>
+          <input type="file" id="import-file" accept=".json" class="hidden" aria-label="Import backup file">
+        </div>
+      </div>
+
+      <!-- About -->
+      <div class="settings-section" style="text-align: center; margin-top: var(--space-2xl);">
+        <img src="./lyf-badge.png" alt="LYF Mail" width="80" style="margin-bottom: var(--space-md); opacity: 0.6;">
+        <p class="caption">Offload v1.0 — Made with care by LYF Mail</p>
+        <p class="caption">
+          <a href="mailto:offload@lyfmail.com" style="color: var(--accent-purple-light); text-decoration: none;">offload@lyfmail.com</a>
+        </p>
+        <p class="caption" style="margin-top: var(--space-sm);">
+          <a href="https://lyfmail.com" target="_blank" rel="noopener" style="color: var(--text-muted); text-decoration: none;">lyfmail.com</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ MODALS ============ -->
+
+    <!-- PMR Modal -->
+    <div class="modal-overlay hidden" id="pmr-modal">
+      <div class="modal" role="dialog" aria-modal="true" aria-label="Progressive Muscle Relaxation Guide">
+        <div class="modal-header">
+          <h3 class="modal-title">Progressive Muscle Relaxation</h3>
+          <button class="modal-close" aria-label="Close modal">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18"/>
+              <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </button>
+        </div>
+        <p style="margin-bottom: var(--space-lg); color: var(--text-secondary);">Tense each muscle group for 5 seconds, then release. Move slowly from head to toe.</p>
+        <div id="pmr-content"></div>
+      </div>
+    </div>
+
+    <!-- Session Detail Modal -->
+    <div class="modal-overlay hidden" id="detail-modal">
+      <div class="modal" role="dialog" aria-modal="true" aria-label="Session details">
+        <div class="modal-header">
+          <div>
+            <p class="caption" id="detail-date" style="margin-bottom: 2px;"></p>
+            <span class="sentiment-badge sentiment-neutral" id="detail-sentiment"></span>
+          </div>
+          <button class="modal-close" aria-label="Close modal">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18"/>
+              <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </button>
+        </div>
+        <div class="detail-content" id="detail-content"></div>
+        <div class="detail-meta">
+          <div class="detail-meta-item">
+            <span class="detail-meta-label">Words</span>
+            <span class="detail-meta-value" id="detail-words"></span>
+          </div>
+          <div class="detail-meta-item">
+            <span class="detail-meta-label">Energy</span>
+            <span class="detail-meta-value" id="detail-energy"></span>
+          </div>
+          <div class="detail-meta-item">
+            <span class="detail-meta-label">Intention</span>
+            <span class="detail-meta-value" id="detail-intention"></span>
+          </div>
+          <div class="detail-meta-item">
+            <span class="detail-meta-label">Gratitude</span>
+            <span class="detail-meta-value" id="detail-gratitude"></span>
+          </div>
+        </div>
+        <div style="display: flex; gap: var(--space-md); margin-top: var(--space-lg);">
+          <button class="btn btn-secondary flex-1" id="btn-share-session">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="18" cy="5" r="3"/>
+              <circle cx="6" cy="12" r="3"/>
+              <circle cx="18" cy="19" r="3"/>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+            </svg>
+            Share
+          </button>
+          <button class="btn btn-ghost" id="btn-delete-session" style="color: var(--accent-rose);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="3 6 5 6 21 6"/>
+              <path d="M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/>
+            </svg>
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dream Modal -->
+    <div class="modal-overlay hidden" id="dream-modal">
+      <div class="modal" role="dialog" aria-modal="true" aria-label="Dream entry">
+        <div class="modal-header">
+          <h3 class="modal-title" id="dream-modal-title">New Dream</h3>
+          <button class="modal-close" aria-label="Close modal">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="18" y1="6" x2="6" y2="18"/>
+              <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </button>
+        </div>
+        <input type="text" class="input mb-md" id="dream-title" placeholder="Dream title..." style="font-size: var(--font-body);">
+        <textarea class="textarea mb-md" id="dream-content" placeholder="Describe your dream..."></textarea>
+        <div class="mb-lg">
+          <label class="caption" style="display: block; margin-bottom: var(--space-sm); color: var(--text-muted);">Tags</label>
+          <div id="dream-tags" style="display: flex; flex-wrap: wrap; gap: var(--space-xs);"></div>
+        </div>
+        <button class="btn btn-primary w-full" id="btn-save-dream">Save Dream</button>
+      </div>
+    </div>
+
+    <!-- Passphrase Prompt (for encrypted data) -->
+    <div class="modal-overlay hidden" id="passphrase-prompt">
+      <div class="modal" role="dialog" aria-modal="true" aria-label="Unlock encrypted data">
+        <div class="modal-header">
+          <h3 class="modal-title">Unlock Your Data</h3>
+        </div>
+        <p style="margin-bottom: var(--space-lg); color: var(--text-secondary);">Your data is encrypted. Enter your passphrase to continue.</p>
+        <input type="password" class="input passphrase-input mb-md" id="unlock-passphrase" placeholder="Enter passphrase" style="font-size: var(--font-body);">
+        <button class="btn btn-primary w-full" id="btn-unlock">Unlock</button>
+      </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav" id="bottom-nav" role="navigation" aria-label="Main navigation">
+      <button class="nav-item active" data-nav="landing" aria-label="Home">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+        <span>Home</span>
+      </button>
+      <button class="nav-item" data-nav="archive" aria-label="Archive">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/>
+        </svg>
+        <span>Archive</span>
+      </button>
+      <button class="nav-item" data-nav="dreams" aria-label="Dreams">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+        </svg>
+        <span>Dreams</span>
+      </button>
+      <button class="nav-item" data-nav="stats" aria-label="Insights">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 20V10M12 20V4M6 20v-6"/>
+        </svg>
+        <span>Insights</span>
+      </button>
+      <button class="nav-item" data-nav="settings" aria-label="Settings">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/>
+        </svg>
+        <span>Settings</span>
+      </button>
+    </nav>
+  </div>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
