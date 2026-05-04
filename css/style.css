@@ -1259,6 +1259,7 @@ p {
   justify-content: space-between;
   align-items: center;
   gap: var(--space-md);
+  user-select: none;
 }
 
 .faq-question::after {
