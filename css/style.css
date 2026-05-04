@@ -1,7 +1,7 @@
 /* ============================================
    OFFLOAD — Complete Design System
    Privacy-First Pre-Sleep Brain Release PWA
-   Version: 2.0 (Corrected & Enhanced)
+   Version: 2.1 (Corrected & Enhanced)
    ============================================ */
 
 /* ---- CSS Custom Properties (Design Tokens) ---- */
@@ -77,6 +77,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   overscroll-behavior-y: none;
   -webkit-tap-highlight-color: transparent;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -1222,9 +1223,10 @@ p {
   font-style: italic;
 }
 
-/* ---- FAQ Section (Visible on Page - Required by Google) ---- */
-#view-faq {
+/* ---- FAQ Section (Visible on Landing Page) ---- */
+.faq-section {
   padding-top: var(--space-lg);
+  width: 100%;
 }
 
 .faq-container {
@@ -1287,6 +1289,33 @@ p {
 
 .faq-answer p {
   margin: 0;
+}
+
+/* ---- Professional Footer ---- */
+.app-footer {
+  text-align: center;
+  padding: var(--space-2xl) var(--space-md) calc(var(--space-xl) + var(--safe-area-bottom));
+  margin-top: var(--space-xl);
+  border-top: 1px solid rgba(124, 111, 174, 0.1);
+}
+
+.app-footer p {
+  font-size: var(--font-caption);
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin: 0;
+}
+
+.app-footer a {
+  color: var(--accent-purple-light);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition-default);
+}
+
+.app-footer a:hover {
+  color: var(--accent-purple);
+  text-decoration: underline;
 }
 
 /* ---- PMR Modal Content ---- */
@@ -1392,6 +1421,10 @@ p {
 
   .faq-item {
     padding: var(--space-md);
+  }
+
+  .app-footer {
+    padding: var(--space-xl) var(--space-sm) calc(var(--space-lg) + var(--safe-area-bottom));
   }
 }
 
