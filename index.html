@@ -35,6 +35,238 @@
 
   <!-- Preload critical assets -->
   <link rel="preload" href="./icon-192.png" as="image">
+
+  <!-- Structured Data: Organization, SoftwareApplication, WebPage, FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://lyfmail.com/#organization",
+        "name": "LYF Mail",
+        "alternateName": "LYF Mail Newsletter",
+        "url": "https://lyfmail.com",
+        "logo": "https://lyfmail.com/application/files/6617/5730/9318/logo.png",
+        "description": "LYF Mail delivers free curated weekly newsletters and open-source privacy tools for health, wealth, career growth, and personal development.",
+        "foundingDate": "2020",
+        "slogan": "Every Choice Shapes Tomorrow",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "Customer Support",
+          "email": "contact@lyfmail.com",
+          "url": "https://support.lyfmail.com/"
+        },
+        "sameAs": [
+          "https://github.com/lyfmail-official",
+          "https://docs.lyfmail.com",
+          "https://signup.lyfmail.com",
+          "https://app.lyfmail.com"
+        ]
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://lyfmail-official.github.io/offload/#software",
+        "name": "Offload",
+        "alternateName": "Offload by LYF Mail",
+        "description": "A privacy-first ceremonial ritual to empty your mind before sleep. Features binaural beats, dream journal, progressive muscle relaxation, and zero cloud storage. All data stays encrypted on your device.",
+        "url": "https://lyfmail-official.github.io/offload/",
+        "applicationCategory": "HealthApplication",
+        "applicationSubCategory": "MentalHealthApplication",
+        "operatingSystem": "Any",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "INR",
+          "description": "Free"
+        },
+        "isAccessibleForFree": true,
+        "author": {
+          "@type": "Organization",
+          "@id": "https://lyfmail.com/#organization"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://lyfmail.com/#organization"
+        },
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://lyfmail-official.github.io/offload/og-image.png",
+          "width": 1200,
+          "height": 630
+        },
+        "screenshot": {
+          "@type": "ImageObject",
+          "url": "https://lyfmail-official.github.io/offload/screenshot-1.png",
+          "width": 1284,
+          "height": 2778
+        },
+        "featureList": [
+          "Privacy-first brain dump journaling",
+          "Binaural beats (4Hz theta waves)",
+          "Pink noise generator",
+          "Progressive muscle relaxation guide",
+          "Dream journal with tagging",
+          "Real-time sentiment analysis",
+          "AI-generated sleep intentions",
+          "AES-256-GCM encryption",
+          "7-day sleep insights and streaks",
+          "Word cloud visualization",
+          "Offline PWA support",
+          "Zero cloud storage",
+          "No sign-up required"
+        ],
+        "inLanguage": ["en", "hi"],
+        "license": "https://lyfmail.com/terms-use",
+        "softwareVersion": "1.0",
+        "downloadUrl": "https://lyfmail-official.github.io/offload/",
+        "installUrl": "https://lyfmail-official.github.io/offload/",
+        "requirements": "Modern web browser with JavaScript enabled",
+        "memoryRequirements": "Minimal — runs entirely in browser",
+        "storageRequirements": "Local device storage only",
+        "applicationSuite": "LYF Mail Wellness Tools"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://lyfmail-official.github.io/offload/#webpage",
+        "url": "https://lyfmail-official.github.io/offload/",
+        "name": "Offload — Pre-Sleep Brain Release",
+        "description": "A privacy-first ceremonial ritual to empty your mind before sleep. Binaural beats, dream journal, and zero cloud storage.",
+        "inLanguage": "en",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://lyfmail.com/#website"
+        },
+        "about": {
+          "@type": "SoftwareApplication",
+          "@id": "https://lyfmail-official.github.io/offload/#software"
+        },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://lyfmail-official.github.io/offload/og-image.png",
+          "width": 1200,
+          "height": 630
+        },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "@id": "https://lyfmail-official.github.io/offload/#breadcrumb"
+        },
+        "datePublished": "2026-04-15",
+        "dateModified": "2026-05-04",
+        "author": {
+          "@type": "Organization",
+          "@id": "https://lyfmail.com/#organization"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "@id": "https://lyfmail.com/#organization"
+        },
+        "potentialAction": {
+          "@type": "UseAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://lyfmail-official.github.io/offload/"
+          },
+          "actionOption": "Open Offload PWA"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://lyfmail-official.github.io/offload/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "LYF Mail",
+            "item": "https://lyfmail.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Tools",
+            "item": "https://lyfmail.com/tools"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Offload",
+            "item": "https://lyfmail-official.github.io/offload/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://lyfmail-official.github.io/offload/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is Offload really free to use?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, Offload is completely free to use. There are no subscription fees, no hidden charges, and no premium tiers. It is an open-source privacy tool maintained by LYF Mail."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Offload protect my privacy?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Offload is built with a zero-backend architecture. All your journal entries, dreams, and session data are stored locally on your device using AES-256-GCM encryption. There are no accounts, no tracking, no analytics, and no cloud storage. You can optionally set a passphrase for additional encryption."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is a brain dump and how does it help with sleep?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A brain dump is the practice of writing down all your thoughts, worries, and to-do items before bed to clear your mind. Offload guides you through a timed 5-minute session with ambient pink noise and optional binaural beats (4Hz theta waves) to help you release mental tension and fall asleep more easily."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are binaural beats and are they safe?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Binaural beats are an auditory illusion created when two slightly different frequencies are played in each ear. Offload uses a 4Hz theta wave pattern (200Hz left, 204Hz right) which research suggests may promote relaxation and sleep onset. They are generally considered safe for most people, but those with epilepsy or who are prone to seizures should consult a healthcare provider before use."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I use Offload without an internet connection?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! Offload is a Progressive Web App (PWA) that works entirely offline after the first visit. All features — journaling, dream recording, stats, and audio — function without any internet connection. Your data never leaves your device."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I export or backup my data?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You can export all your sessions and dreams as a JSON file from the Settings page. This file can be imported back into Offload or kept as a backup. If encryption is enabled, your export will be encrypted with your passphrase."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is Progressive Muscle Relaxation (PMR)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Progressive Muscle Relaxation is a technique where you systematically tense and then relax different muscle groups in your body. Offload includes a guided PMR feature that takes you from head to toe, helping release physical tension that may interfere with sleep."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Offload work on iOS and Android?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, Offload works on all modern browsers including Safari on iOS and Chrome on Android. You can also install it as a PWA by tapping 'Add to Home Screen' in your browser menu for a native app-like experience."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <div class="app-shell">
@@ -155,7 +387,7 @@
         </div>
         <button class="btn btn-ghost" id="btn-focus">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <path d="M1 12s4-8 11-8 11 8-4 8-11 8-11-8-11-8z"/>
             <circle cx="12" cy="12" r="3"/>
           </svg>
           Focus
