@@ -12,35 +12,35 @@ Offload is a zero-backend, privacy-first ceremonial ritual application for pre-s
 
 ### 8 Core Views
 
-1. **Landing** — Breathing animation, real-time moon phase, rotating sleep hygiene tip
-2. **Brain Dump** — Timer with SVG progress ring, real-time sentiment analysis, voice input, ambient pink noise, binaural beats (4Hz theta)
-3. **Closing Ceremony** — WebGL particle system with 200 rising particles
-4. **Intention Setting** — AI-generated intentions based on your dump content
-5. **Archive** — Session cards with detail view, export/import, share
-6. **Dream Journal** — Tag dreams (lucid/vivid/nightmare/recurring/prophetic)
-7. **Sleep Insights** — 7-day chart, word cloud, streak counter
-8. **Settings** — AES-256-GCM encryption, audio preferences, bedtime reminders
+1. **Landing** — Breathing animation, real-time moon phase, rotating sleep hygiene tip.
+2. **Brain Dump** — Timer with SVG progress ring, real-time sentiment analysis, voice input, ambient pink noise, binaural beats (4Hz theta).
+3. **Closing Ceremony** — WebGL particle system with 200 rising particles.
+4. **Intention Setting** — AI-generated intentions based on your dump content.
+5. **Archive** — Session cards with detail view, export/import, share.
+6. **Dream Journal** — Tag dreams (lucid/vivid/nightmare/recurring/prophetic).
+7. **Sleep Insights** — 7-day chart, word cloud, streak counter.
+8. **Settings** — AES-256-GCM encryption, audio preferences, bedtime reminders.
 
 ### Privacy & Security
 
-- **AES-256-GCM encryption** via Web Crypto API
-- **PBKDF2 key derivation** (150,000 iterations)
-- All data stays on your device — zero external API calls
-- No accounts, no tracking, no analytics
+- **AES-256-GCM encryption** via Web Crypto API.
+- **PBKDF2 key derivation** (150,000 iterations).
+- All data stays on your device — zero external API calls.
+- No accounts, no tracking, no analytics.
 
 ### Audio
 
-- **Pink noise generator** via Web Audio API
-- **Binaural beats** — 4Hz theta wave (200Hz L / 204Hz R)
-- **Ceremony chime** — Descending tone sequence
-- **UI sound effects** — Synthesized feedback sounds
+- **Pink noise generator** via Web Audio API.
+- **Binaural beats** — 4Hz theta wave (200Hz L / 204Hz R).
+- **Ceremony chime** — Descending tone sequence.
+- **UI sound effects** — Synthesized feedback sounds.
 
 ### PWA
 
-- Installable on iOS, Android, and Desktop
-- Works offline after first visit
-- Background sync support
-- Adaptive icon for Android
+- Installable on iOS, Android, and Desktop.
+- Works offline after first visit.
+- Background sync support.
+- Adaptive icon for Android.
 
 ## Technology Stack
 
@@ -74,9 +74,9 @@ npx serve .
 
 The repository includes a GitHub Actions workflow that automatically deploys to GitHub Pages on every push to `main`.
 
-1. Fork this repository
-2. Go to Settings → Pages
-3. Set Source to "GitHub Actions"
+1. Fork this repository.
+2. Go to Settings → Pages.
+3. Set Source to "GitHub Actions".
 4. Push to `main` — your site will be live at `https://yourusername.github.io/offload/`
 
 ## Browser Support
@@ -116,3 +116,6 @@ MIT License — see [LICENSE](LICENSE) for details.
 Made with care by [LYF Mail](https://lyfmail.com)
 
 Contact: [offload@lyfmail.com](mailto:offload@lyfmail.com)
+
+**Maintained by [LYF Mail](https://github.com/lyfmail-official)** · 
+Founded by [Ajay Kumar Chaudhary](https://github.com/lyfmail) 
