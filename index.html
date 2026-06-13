@@ -42,165 +42,147 @@
   <!-- Structured Data: Organization, SoftwareApplication, WebPage, BreadcrumbList -->
   <!-- NOTE: FAQPage is intentionally REMOVED from JSON-LD to avoid duplicate with visible HTML microdata -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://lyfmail.com/#organization",
+      "name": "LYF Mail",
+      "alternateName": "LYF Mail Newsletter",
+      "url": "https://lyfmail.com",
+      "logo": "https://lyfmail.com/application/files/6617/5730/9318/logo.png",
+      "description": "LYF Mail delivers free curated weekly newsletters and open-source privacy tools for health, wealth, career growth, and personal development.",
+      "foundingDate": "2020",
+      "slogan": "Every Choice Shapes Tomorrow",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Support",
+        "email": "contact@lyfmail.com",
+        "url": "https://support.lyfmail.com/"
+      },
+      "sameAs": [
+        "https://github.com/lyfmail-official",
+        "https://docs.lyfmail.com",
+        "https://signup.lyfmail.com",
+        "https://app.lyfmail.com"
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://lyfmail-official.github.io/offload/#software",
+      "name": "Offload",
+      "alternateName": "Offload by LYF Mail",
+      "description": "A privacy-first ceremonial ritual to empty your mind before sleep. Features binaural beats, dream journal, progressive muscle relaxation, and zero cloud storage. All data stays encrypted on your device.",
+      "url": "https://lyfmail-official.github.io/offload/",
+      "applicationCategory": "HealthApplication",
+      "applicationSubCategory": "MentalHealthApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "INR",
+        "description": "Free"
+      },
+      "isAccessibleForFree": true,
+      "author": {
         "@type": "Organization",
-        "@id": "https://lyfmail.com/#organization",
-        "name": "LYF Mail",
-        "alternateName": "LYF Mail Newsletter",
-        "url": "https://lyfmail.com",
-        "logo": "https://lyfmail.com/application/files/6617/5730/9318/logo.png",
-        "description": "LYF Mail delivers free curated weekly newsletters and open-source privacy tools for health, wealth, career growth, and personal development.",
-        "foundingDate": "2020",
-        "slogan": "Every Choice Shapes Tomorrow",
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "contactType": "Customer Support",
-          "email": "contact@lyfmail.com",
-          "url": "https://support.lyfmail.com/"
-        },
-        "sameAs": [
-          "https://github.com/lyfmail-official",
-          "https://docs.lyfmail.com",
-          "https://signup.lyfmail.com",
-          "https://app.lyfmail.com"
-        ]
+        "name": "LYF Mail"
       },
-      {
-        "@type": "SoftwareApplication",
-        "@id": "https://lyfmail-official.github.io/offload/#software",
-        "name": "Offload",
-        "alternateName": "Offload by LYF Mail",
-        "description": "A privacy-first ceremonial ritual to empty your mind before sleep. Features binaural beats, dream journal, progressive muscle relaxation, and zero cloud storage. All data stays encrypted on your device.",
-        "url": "https://lyfmail-official.github.io/offload/",
-        "applicationCategory": "HealthApplication",
-        "applicationSubCategory": "MentalHealthApplication",
-        "operatingSystem": "Any",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "INR",
-          "description": "Free"
-        },
-        "isAccessibleForFree": true,
-        "author": {
-          "@type": "Organization",
-          "@id": "https://lyfmail.com/#organization"
-        },
-        "publisher": {
-          "@type": "Organization",
-          "@id": "https://lyfmail.com/#organization"
-        },
-        "image": {
-          "@type": "ImageObject",
-          "url": "https://lyfmail-official.github.io/offload/og-image.png",
-          "width": 1200,
-          "height": 630
-        },
-        "screenshot": {
-          "@type": "ImageObject",
-          "url": "https://lyfmail-official.github.io/offload/screenshot-1.png",
-          "width": 1284,
-          "height": 2778
-        },
-        "featureList": [
-          "Privacy-first brain dump journaling",
-          "Binaural beats (4Hz theta waves)",
-          "Pink noise generator",
-          "Progressive muscle relaxation guide",
-          "Dream journal with tagging",
-          "Real-time sentiment analysis",
-          "AI-generated sleep intentions",
-          "AES-256-GCM encryption",
-          "7-day sleep insights and streaks",
-          "Word cloud visualization",
-          "Offline PWA support",
-          "Zero cloud storage",
-          "No sign-up required"
-        ],
-        "inLanguage": ["en", "hi"],
-        "license": "https://lyfmail.com/terms-use",
-        "softwareVersion": "1.0",
-        "downloadUrl": "https://lyfmail-official.github.io/offload/",
-        "installUrl": "https://lyfmail-official.github.io/offload/",
-        "requirements": "Modern web browser with JavaScript enabled",
-        "memoryRequirements": "Minimal — runs entirely in browser",
-        "storageRequirements": "Local device storage only",
-        "applicationSuite": "LYF Mail Wellness Tools"
+      "publisher": {
+        "@type": "Organization",
+        "name": "LYF Mail"
       },
-      {
-        "@type": "WebPage",
-        "@id": "https://lyfmail-official.github.io/offload/#webpage",
-        "url": "https://lyfmail-official.github.io/offload/",
-        "name": "Offload — Pre-Sleep Brain Release",
-        "description": "A privacy-first ceremonial ritual to empty your mind before sleep. Binaural beats, dream journal, and zero cloud storage.",
-        "inLanguage": "en",
-        "isPartOf": {
-          "@type": "WebSite",
-          "@id": "https://lyfmail.com/#website"
-        },
-        "about": {
-          "@type": "SoftwareApplication",
-          "@id": "https://lyfmail-official.github.io/offload/#software"
-        },
-        "primaryImageOfPage": {
-          "@type": "ImageObject",
-          "url": "https://lyfmail-official.github.io/offload/og-image.png",
-          "width": 1200,
-          "height": 630
-        },
-        "breadcrumb": {
-          "@type": "BreadcrumbList",
-          "@id": "https://lyfmail-official.github.io/offload/#breadcrumb"
-        },
-        "datePublished": "2026-04-15",
-        "dateModified": "2026-05-05",
-        "author": {
-          "@type": "Organization",
-          "@id": "https://lyfmail.com/#organization"
-        },
-        "publisher": {
-          "@type": "Organization",
-          "@id": "https://lyfmail.com/#organization"
-        },
-        "potentialAction": {
-          "@type": "UseAction",
-          "target": {
-            "@type": "EntryPoint",
-            "urlTemplate": "https://lyfmail-official.github.io/offload/"
-          },
-          "actionOption": "Open Offload PWA"
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://lyfmail-official.github.io/offload/og-image.png",
+        "width": 1200,
+        "height": 630
+      },
+      "screenshot": {
+        "@type": "ImageObject",
+        "url": "https://lyfmail-official.github.io/offload/screenshot-1.png",
+        "width": 1284,
+        "height": 2778
+      },
+      "featureList": [
+        "Privacy-first brain dump journaling",
+        "Binaural beats (4Hz theta waves)",
+        "Pink noise generator",
+        "Progressive muscle relaxation guide",
+        "Dream journal with tagging",
+        "Real-time sentiment analysis",
+        "AI-generated sleep intentions",
+        "AES-256-GCM encryption",
+        "7-day sleep insights and streaks",
+        "Word cloud visualization",
+        "Offline PWA support",
+        "Zero cloud storage",
+        "No sign-up required"
+      ],
+      "inLanguage": ["en", "hi"],
+      "license": "https://lyfmail.com/terms-use",
+      "softwareVersion": "1.0",
+      "downloadUrl": "https://lyfmail-official.github.io/offload/",
+      "installUrl": "https://lyfmail-official.github.io/offload/",
+      "requirements": "Modern web browser with JavaScript enabled",
+      "memoryRequirements": "Minimal — runs entirely in browser",
+      "storageRequirements": "Local device storage only",
+      "applicationSuite": "LYF Mail Wellness Tools"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://lyfmail-official.github.io/offload/#webpage",
+      "url": "https://lyfmail-official.github.io/offload/",
+      "name": "Offload — Pre-Sleep Brain Release",
+      "description": "A privacy-first ceremonial ritual to empty your mind before sleep. Binaural beats, dream journal, and zero cloud storage.",
+      "inLanguage": "en",
+      "datePublished": "2026-04-15",
+      "dateModified": "2026-05-05",
+      "author": {
+        "@type": "Organization",
+        "name": "LYF Mail"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "LYF Mail"
+      },
+      "potentialAction": {
+        "@type": "UseAction",
+        "name": "Open Offload PWA",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://lyfmail-official.github.io/offload/"
         }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": "https://lyfmail-official.github.io/offload/#breadcrumb",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "LYF Mail",
-            "item": "https://lyfmail.com/"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Tools",
-            "item": "https://lyfmail.com/tools"
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Offload",
-            "item": "https://lyfmail-official.github.io/offload/"
-          }
-        ]
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://lyfmail-official.github.io/offload/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "LYF Mail",
+          "item": "https://lyfmail.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tools",
+          "item": "https://lyfmail.com/tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Offload",
+          "item": "https://lyfmail-official.github.io/offload/"
+        }
+      ]
+    }
+  ]
+}
+</script>
 <base target="_blank">
 <base target="_blank">
 </head>
