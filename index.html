@@ -108,42 +108,40 @@
 					<h1 class="animate__animated animate__fadeIn">Complete File Structure</h1>
 					<div class="description-text animate__animated animate__fadeIn">
 						<p>
+## 📁 Project Structure
+
+```
 offload/
+├── index.html              # Single-page application shell
+├── manifest.json           # PWA manifest for installability
+├── sw.js                   # Service Worker — offline cache strategy
+├── robots.txt              # SEO optimization
+├── sitemap.xml             # SEO optimization
+├── css/
+│   └── style.css           # Complete design system with dark mode
+├── js/
+│   ├── data-store.js       # Encrypted localStorage wrapper (AES-256-GCM)
+│   ├── audio-engine.js     # Web Audio API synthesis (pink noise, binaural beats)
+│   ├── ceremony-renderer.js # WebGL particle system for closing ceremony
+│   ├── sentiment-analyzer.js # Client-side emotion detection & lexicon analysis
+│   └── app.js              # Main application controller & routing
+├── assets/
+│   └── icons/              # PWA icons (192x192, 512x512, adaptive)
+│   └── moon-phases/        # Real-time moon phase images
+│   └── screenshots/        # App store / PWA screenshots
 ├── .github/
 │   └── workflows/
-│       └── deploy.yml           GitHub Actions → GitHub Pages
-├── index.html                   Single-page application shell
-├── manifest.json                PWA manifest
-├── sw.js                        Service worker (cache-first strategy)
-├── robots.txt                   SEO: allow all
-├── sitemap.xml                  SEO: site structure
-├── README.md                    Project documentation
-├── LICENSE                      MIT License
-├── icon-192.png                 PWA icon (192x192)
-├── icon-512.png                 PWA icon (512x512)
-├── apple-touch-icon.png         iOS icon (180x180)
-├── favicon-32x32.png            Browser tab icon
-├── og-image.png                 Social media preview (1200x630)
-├── maskable-icon-512.png        Adaptive icon (512x512)
-├── screenshot-mobile.png        PWA screenshot (390x844)
-├── screenshot-wide.png          PWA screenshot (1280x720)
-├── lyf-badge.png                LYF Mail branding badge
-├── moon-new-moon.png            Moon phase: New Moon
-├── moon-waxing-crescent.png     Moon phase: Waxing Crescent
-├── moon-first-quarter.png       Moon phase: First Quarter
-├── moon-waxing-gibbous.png      Moon phase: Waxing Gibbous
-├── moon-full-moon.png           Moon phase: Full Moon
-├── moon-waning-gibbous.png      Moon phase: Waning Gibbous
-├── moon-last-quarter.png        Moon phase: Last Quarter
-├── moon-waning-crescent.png     Moon phase: Waning Crescent
-├── css/
-│   └── style.css                Complete design system
-└── js/
-    ├── data-store.js            Encrypted localStorage wrapper
-    ├── audio-engine.js          Web Audio API synthesis
-    ├── ceremony-renderer.js     WebGL particle system
-    ├── sentiment-analyzer.js    TensorFlow.js emotion detection
-    └── app.js                   Main application controller
+│       └── deploy.yml      # GitHub Actions — auto-deploy to GitHub Pages
+├── docs/
+│   ├── privacy.md          # Privacy architecture documentation
+│   ├── audio-science.md    # Binaural beats & pink noise research
+│   └── sleep-hygiene.md    # Sleep hygiene tips & best practices
+├── LICENSE
+├── README.md
+├── CONTRIBUTING.md
+└── CODE_OF_CONDUCT.md
+```
+
 						</p>
 						<p>
 Publisher: LYF Mail
