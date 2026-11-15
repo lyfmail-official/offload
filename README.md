@@ -129,7 +129,7 @@ Offload is built with **radical simplicity** — zero frameworks, zero dependenc
 
 ### For Users (No Technical Knowledge Required)
 
-1. **Visit** [lyfmail-official.github.io/offload](https://lyfmail-official.github.io/offload/)
+1. **Visit** [offload.lyfmail.com](https://offload.lyfmail.com)
 2. **No signup required** — open the app and begin your first brain dump immediately.
 3. **Set your timer** — default 5 minutes, adjustable in Settings.
 4. **Write or speak your thoughts** — release everything on your mind.
@@ -289,7 +289,7 @@ Offload is one of nine free, open-source privacy tools built by [LYF Mail](https
 | **[LYF SOS](https://lyfsos.lyfmail.com)** | Offline emergency safety app for Android. Built for Indian families. | [lyfsos.lyfmail.com](https://lyfsos.lyfmail.com) | `lyfsos` |
 | **[PDPR](https://pdpr.lyfmail.com)** | Public Dark Pattern Registry. Document deceptive UX ethically. | [pdpr.lyfmail.com](https://pdpr.lyfmail.com) | `pdpr` |
 | **[Together](https://together.lyfmail.com)** | Mental health support through therapeutic silence and shared presence. | [together.lyfmail.com](https://together.lyfmail.com) | `together` |
-| **[Rewriter](https://lyfmail-official.github.io/rewriter/)** | AI-powered narrative therapy and health content writing assistant. | [lyfmail-official.github.io/rewriter](https://lyfmail-official.github.io/rewriter/) | `rewriter` |
+| **[Rewriter](https://rewriter.lyfmail.com/)** | AI-powered narrative therapy and health content writing assistant. | [rewriter.lyfmail.com](https://rewriter.lyfmail.com/) | `rewriter` |
 
 ### 📚 Free Newsletters & Guides
 - [Health & Wellness Guide](https://lyfmail.com/health-wellness-guide)
@@ -313,7 +313,7 @@ You are free to use, modify, and distribute it — including commercially. See [
 ## 📫 Connect With Us
 
 - **🌐 Website:** [lyfmail.com](https://lyfmail.com)
-- **🌙 Offload App:** [lyfmail-official.github.io/offload](https://lyfmail-official.github.io/offload/)
+- **🌙 Offload App:** [offload.lyfmail.com](https://offload.lyfmail.com)
 - **📱 PWA:** [app.lyfmail.com](https://app.lyfmail.com)
 - **📚 Documentation:** [docs.lyfmail.com](https://docs.lyfmail.com)
 - **🎨 Brand Assets:** [github.com/lyfmail-official/lyfmail-brand-assets](https://github.com/lyfmail-official/lyfmail-brand-assets)
