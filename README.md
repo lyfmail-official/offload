@@ -1,11 +1,11 @@
 # Offload — Pre-Sleep Brain Dump App with Binaural Beats & Dream Journal
 
-**Release your thoughts. Rest deeply. A free, open-source, privacy-first pre-sleep brain dumping ritual with ambient pink noise, binaural beats, dream journaling, and sleep insights — all data stays encrypted on your device.**
+**Release your thoughts. Rest deeply. A free, open-source, privacy-first pre-sleep brain dumping ritual with ambient pink noise, binaural beats, dream journaling, and sleep insights — all data stays on your device, with optional passphrase encryption.**
 
-[![Live App](https://img.shields.io/badge/Live%20App-offload.lyfmail.com-teal)](https://lyfmail-official.github.io/offload/)
+[![Live App](https://img.shields.io/badge/Live%20App-offload.lyfmail.com-teal)](https://offload.lyfmail.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-purple.svg)](https://github.com/lyfmail-official/offload/blob/main/LICENSE)
-[![PWA](https://img.shields.io/badge/PWA-Offline--First-orange.svg)](https://lyfmail-official.github.io/offload/)
-[![Privacy](https://img.shields.io/badge/Privacy-Zero%20Backend-green.svg)](https://lyfmail-official.github.io/offload/)
+[![PWA](https://img.shields.io/badge/PWA-Offline--First-orange.svg)](https://offload.lyfmail.com)
+[![Privacy](https://img.shields.io/badge/Privacy-Zero%20Backend-green.svg)](https://offload.lyfmail.com)
 [![Maintained by LYF Mail](https://img.shields.io/badge/Maintained%20by-LYF%20Mail-red)](https://lyfmail.com)
 
 **"Release your thoughts. Rest deeply."**  
@@ -15,9 +15,9 @@ A free, open-source sleep wellness and brain dump journaling tool from [LYF Mail
 
 ## 🌙 What Is Offload?
 
-**Offload** is a free, open-source, **privacy-first pre-sleep brain release application** and **sleep wellness tool** designed to help you clear your mind before bed through a structured **brain dumping ritual**. It combines **ambient pink noise**, **binaural beats (4Hz theta waves)**, **real-time sentiment analysis**, **dream journaling**, **sleep insights**, and a **closing ceremony** — all within a single-page Progressive Web App (PWA) that works entirely offline.
+**Offload** is a free, open-source, **privacy-first pre-sleep brain release application** and **sleep wellness tool** designed to help you clear your mind before bed through a structured **brain dumping ritual**. It combines **ambient pink noise**, **optional binaural beats (4Hz)**, **real-time sentiment analysis**, **dream journaling**, **sleep insights**, and a **closing ceremony** — all within a single-page Progressive Web App (PWA) that works entirely offline.
 
-Unlike sleep apps, meditation apps, or journaling platforms that store your most intimate thoughts on cloud servers, Offload follows a **strict zero-backend architecture**. Your brain dumps, dream journals, sleep patterns, and personal reflections are encrypted with **AES-256-GCM** and stored exclusively on your device. **No accounts. No tracking. No cloud storage. No analytics.**
+Unlike sleep apps, meditation apps, or journaling platforms that store your most intimate thoughts on cloud servers, Offload follows a **strict zero-backend architecture**. Your brain dumps, dream journals, sleep patterns, and personal reflections are stored exclusively on your device, with optional **AES-256-GCM** passphrase encryption. **No accounts. No tracking. No ads. No cloud storage. No analytics. No third-party scripts or fonts.**
 
 Built by [LYF Mail](https://lyfmail.com), a [privacy-first digital wellness platform](https://lyfmail.com) serving 50,000+ subscribers across India since 2020, Offload extends our mission of **"Every Choice Shapes Tomorrow"** into **sleep hygiene**, **mental decluttering**, and **restorative wellness technology**.
 
@@ -50,27 +50,28 @@ Most sleep apps and journaling platforms demand:
 | View | Purpose | Key Capabilities |
 |------|---------|----------------|
 | **1. Landing** | Calm entry into your ritual. | Breathing animation, real-time moon phase display, rotating sleep hygiene tip. |
-| **2. Brain Dump** | Release racing thoughts. | 5-minute timer with SVG progress ring, real-time sentiment analysis, voice input, ambient pink noise, binaural beats (4Hz theta). |
+| **2. Brain Dump** | Release racing thoughts. | 2, 5, 10 or 15-minute timer (default 5) with SVG progress ring, quiet sentiment hint, voice input, soft pink noise, optional 4Hz binaural beats, or silence. |
 | **3. Closing Ceremony** | Symbolic release of worries. | WebGL particle system with 200 rising particles — watch your thoughts dissolve. |
-| **4. Intention Setting** | Positive closure before sleep. | AI-generated intentions based on your dump content, or write your own. |
+| **4. Intention Setting** | Positive closure before sleep. | Suggested intentions matched to what you wrote, chosen from a built-in list (not an AI service), or write your own. |
 | **5. Archive** | Review past sessions. | Session cards with detail view, encrypted export/import, share functionality. |
 | **6. Dream Journal** | Capture morning dreams. | Tag dreams (lucid, vivid, nightmare, recurring, prophetic), mood tracking. |
 | **7. Sleep Insights** | Understand your patterns. | 7-day activity chart, word cloud visualization, streak counter, average energy tracking. |
-| **8. Settings** | Personalize your experience. | AES-256-GCM encryption toggle, audio preferences, bedtime reminders. |
+| **8. Settings** | Personalize your experience. | Optional AES-256-GCM passphrase, audio preferences, bedtime reminders, export and import. |
 
 ### 🔒 Privacy-First by Design — Zero-Backend Architecture
 
-- ✅ **AES-256-GCM encryption** via Web Crypto API — military-grade encryption for all journal entries.
+- ✅ **Optional AES-256-GCM encryption** via Web Crypto API for your journal entries, protected by a passphrase only you know.
 - ✅ **PBKDF2 key derivation** (150,000 iterations) — brute-force resistant passphrase protection.
-- ✅ **All data stays on your device** — zero external API calls, zero network transmission.
+- ✅ **All data stays on your device** — no server database and no data transmission. (The one exception is optional voice input; see the note below.)
 - ✅ **No accounts required** — no signup, no login, no email, no phone number.
-- ✅ **No tracking or analytics** — zero cookies, zero fingerprinting, zero behavioral profiling.
+- ✅ **No tracking, no ads** — no analytics, no third-party scripts or fonts, no fingerprinting, no behavioral profiling.
 - ✅ **Optional passphrase encryption** — add an extra layer of security with a key only you know.
 
 ### 🎵 Audio & Sound Therapy
 
 - **🌸 Pink noise generator** — synthesized via Web Audio API for deep relaxation and sleep onset.
-- **🧠 Binaural beats** — 4Hz theta wave pattern (200Hz left channel / 204Hz right channel) to promote relaxation and pre-sleep brain states.
+- **🧠 Optional binaural beats** — 4Hz pattern (200Hz left channel / 204Hz right channel). The evidence for binaural beats is mixed, so they are optional and **off by default**. Use headphones.
+- **🧘 Progressive Muscle Relaxation** — thirteen guided steps from hands to feet: tense, hold, release. Good for nights when the body is the problem.
 - **🔔 Ceremony chime** — descending tone sequence for mindful session closure.
 - **🎛️ UI sound effects** — synthesized feedback sounds for calming interaction.
 
@@ -89,17 +90,17 @@ Most sleep apps and journaling platforms demand:
 Open Offload and breathe with the animated guide. The real-time moon phase and a rotating sleep hygiene tip set a calm, intentional tone for your pre-sleep routine.
 
 ### Step 2: Brain Dump — Release Racing Thoughts
-Set a timer (default 5 minutes) and write everything on your mind — worries, to-do items, anxieties, ideas. Offload provides:
-- **Real-time sentiment analysis** — client-side lexicon analysis detects your emotional state as you write.
-- **Voice input** — speak your thoughts instead of typing (Web Speech API, local processing).
-- **Ambient pink noise** — continuous relaxation soundscape.
-- **Optional binaural beats** — 4Hz theta waves to guide your brain toward a pre-sleep state.
+Choose 2, 5, 10 or 15 minutes (default 5) and write everything on your mind — worries, to-do items, anxieties, ideas. Offload provides:
+- **Quiet sentiment hint** — a client-side word list on your device shows how heavy your writing feels.
+- **Voice input** — speak instead of typing, using your browser's built-in speech recognition. In some browsers, such as Chrome, that service may send audio to the browser maker. If that matters to you, type instead.
+- **Soft pink noise** — a continuous relaxation soundscape, or choose silence.
+- **Optional binaural beats** — 4Hz, off by default.
 
 ### Step 3: Closing Ceremony — Symbolic Release
 Watch your written thoughts transform into 200 rising particles in a WebGL visualization. This **ceremonial release** creates a psychological boundary between your active day and restorative sleep.
 
 ### Step 4: Intention Setting — Positive Closure
-Offload generates a personalized sleep intention based on your brain dump content (e.g., *"I release today and welcome peaceful rest"*). Or write your own intention, gratitude note, or affirmation.
+Offload suggests an intention matched to what you wrote, chosen from a built-in list (not an AI service) — for example, *"I release today and welcome peaceful rest"*. Or write your own intention, gratitude note, or affirmation.
 
 ### Step 5: Morning Dream Journal
 Upon waking, log your dreams with tags (lucid, vivid, nightmare, recurring, prophetic) and mood tracking. Build a private, encrypted dream archive over time.
@@ -131,7 +132,7 @@ Offload is built with **radical simplicity** — zero frameworks, zero dependenc
 
 1. **Visit** [offload.lyfmail.com](https://offload.lyfmail.com)
 2. **No signup required** — open the app and begin your first brain dump immediately.
-3. **Set your timer** — default 5 minutes, adjustable in Settings.
+3. **Choose your time** — 2, 5, 10 or 15 minutes (default 5).
 4. **Write or speak your thoughts** — release everything on your mind.
 5. **Experience the closing ceremony** — watch your worries dissolve into particles.
 6. **Set your sleep intention** — close with purpose and positivity.
@@ -278,18 +279,25 @@ Please read [`CONTRIBUTING.md`](CONTRIBUTING.md) and [`CODE_OF_CONDUCT.md`](CODE
 
 ## 🏗️ The LYF Mail Ecosystem
 
-Offload is one of nine free, open-source privacy tools built by [LYF Mail](https://lyfmail.com), a [digital wellness platform](https://lyfmail.com) from Varanasi, India, serving 50,000+ subscribers since 2020. Explore our other projects:
+Offload is one of **fifteen free privacy-first apps** built by [LYF Mail](https://lyfmail.com), a [digital wellness platform](https://lyfmail.com) from Varanasi, India, serving 50,000+ subscribers since 2020. Browse them all at [lyfmail.com/privacy-first-apps](https://lyfmail.com/privacy-first-apps), or explore our other projects:
 
 | Project | Description | Live App | Repository |
 |---------|-------------|----------|------------|
 | **[LYF Mail](https://lyfmail.com)** | Privacy-first newsletters for health, wealth, career & mindfulness. | [lyfmail.com](https://lyfmail.com) | `lyfmail` |
-| **[TrustLens](https://trustlens.lyfmail.com)** | Detect misinformation before you share. Privacy-first credibility analysis. | [trustlens.lyfmail.com](https://trustlens.lyfmail.com) | `trustlens` |
+| **[LYF Mail App](https://app.lyfmail.com)** | Installable app with newsletters, guides and free tools. | [app.lyfmail.com](https://app.lyfmail.com) | `lyfmail-pwa` |
+| **[Ebb](https://ebb.lyfmail.com)** | Private period and fertility tracker. Data stays on your device. | [ebb.lyfmail.com](https://ebb.lyfmail.com) | `ebb` |
+| **[Together](https://together.lyfmail.com)** | Silent shared presence for calm. No feed, no likes, no chat. | [together.lyfmail.com](https://together.lyfmail.com) | `together` |
+| **[Rewriter](https://rewriter.lyfmail.com)** | Private narrative therapy writing companion with six guided phases. | [rewriter.lyfmail.com](https://rewriter.lyfmail.com) | `rewriter` |
+| **[Mnemo](https://mnemo.lyfmail.com)** | Private encrypted second brain with on-device AI search and chat. | [mnemo.lyfmail.com](https://mnemo.lyfmail.com) | `mnemo` |
+| **[Psychelog](https://psychelog.lyfmail.com)** | Encrypted integration journal with on-device insights and therapist export. | [psychelog.lyfmail.com](https://psychelog.lyfmail.com) | `psychelog` |
+| **[Fitrail](https://fitrail.lyfmail.com)** | Encrypted fitness, sleep and workout tracker with route privacy. | [fitrail.lyfmail.com](https://fitrail.lyfmail.com) | `fitrail` |
+| **[TrustLens](https://trustlens.lyfmail.com)** | Check news, links and forwarded messages for misinformation before you share. | [trustlens.lyfmail.com](https://trustlens.lyfmail.com) | `trustlens` |
+| **[LYF SOS](https://lyfsos.lyfmail.com)** | Offline emergency mesh network for Android. Built for India. | [lyfsos.lyfmail.com](https://lyfsos.lyfmail.com) | `lyfsos` |
+| **[PDPR](https://pdpr.lyfmail.com)** | Public Dark-Pattern Registry. Document deceptive UX ethically. | [pdpr.lyfmail.com](https://pdpr.lyfmail.com) | `pdpr` |
 | **[Signals](https://signals.lyfmail.com)** | Privacy-first analytics. Human vs. bot detection without cookies or fingerprinting. | [signals.lyfmail.com](https://signals.lyfmail.com) | `signals` |
-| **[Ebb](https://ebb.lyfmail.com)** | Period tracker with homomorphic encryption. Your data stays encrypted — even from us. | [ebb.lyfmail.com](https://ebb.lyfmail.com) | `ebb` |
-| **[LYF SOS](https://lyfsos.lyfmail.com)** | Offline emergency safety app for Android. Built for Indian families. | [lyfsos.lyfmail.com](https://lyfsos.lyfmail.com) | `lyfsos` |
-| **[PDPR](https://pdpr.lyfmail.com)** | Public Dark Pattern Registry. Document deceptive UX ethically. | [pdpr.lyfmail.com](https://pdpr.lyfmail.com) | `pdpr` |
-| **[Together](https://together.lyfmail.com)** | Mental health support through therapeutic silence and shared presence. | [together.lyfmail.com](https://together.lyfmail.com) | `together` |
-| **[Rewriter](https://rewriter.lyfmail.com/)** | AI-powered narrative therapy and health content writing assistant. | [rewriter.lyfmail.com](https://rewriter.lyfmail.com/) | `rewriter` |
+| **[Custos](https://custos.lyfmail.com)** | Local-first guardian for sensitive financial data before it reaches AI. | [custos.lyfmail.com](https://custos.lyfmail.com) | `custos` |
+| **[HireStack](https://hirestack.lyfmail.com)** | Nine free career tools for freelancers and job seekers. Works offline. | [hirestack.lyfmail.com](https://hirestack.lyfmail.com) | `hirestack` |
+| **[Veilora](https://veilora.lyfmail.com)** | Six free tools for creators: clean image metadata, scan text, check before publishing. | [veilora.lyfmail.com](https://veilora.lyfmail.com) | `veilora` |
 
 ### 📚 Free Newsletters & Guides
 - [Health & Wellness Guide](https://lyfmail.com/health-wellness-guide)
@@ -313,6 +321,7 @@ You are free to use, modify, and distribute it — including commercially. See [
 ## 📫 Connect With Us
 
 - **🌐 Website:** [lyfmail.com](https://lyfmail.com)
+- **🛠️ All Privacy-First Apps:** [lyfmail.com/privacy-first-apps](https://lyfmail.com/privacy-first-apps)
 - **🌙 Offload App:** [offload.lyfmail.com](https://offload.lyfmail.com)
 - **📱 PWA:** [app.lyfmail.com](https://app.lyfmail.com)
 - **📚 Documentation:** [docs.lyfmail.com](https://docs.lyfmail.com)
@@ -339,13 +348,13 @@ You are free to use, modify, and distribute it — including commercially. See [
 A: Yes. Offload is completely free. There are no subscription fees, no hidden charges, no premium tiers, and no advertising. It is an open-source project by [LYF Mail](https://lyfmail.com) committed to making sleep wellness tools accessible to everyone.
 
 **Q: How does Offload protect my privacy?**  
-A: Offload is built with a **zero-backend architecture**. All your journal entries, brain dumps, dreams, and session data are stored locally on your device using **AES-256-GCM encryption** via the Web Crypto API. There are no accounts, no tracking, no analytics, and no cloud storage. You can optionally set a passphrase for additional encryption.
+A: Offload is built with a **zero-backend architecture**. All your journal entries, brain dumps, dreams, and session data are stored locally on your device. There are no accounts, no tracking, no ads, no analytics, and no cloud storage. You can add an optional passphrase that encrypts entries on your device with **AES-256-GCM** via the Web Crypto API. If you forget it, nobody can recover your data, including us.
 
 **Q: What is a brain dump and how does it help with sleep?**  
-A: A **brain dump** is the practice of writing down all your thoughts, worries, and to-do items before bed to clear your mind. Research shows that offloading mental clutter before sleep reduces cognitive arousal and improves sleep onset. Offload guides you through a timed 5-minute session with ambient pink noise and optional binaural beats (4Hz theta waves) to help you release mental tension and fall asleep more easily.
+A: A **brain dump** is the practice of writing down all your thoughts, worries, and to-do items before bed to clear your mind. In a 2018 sleep-lab study (Scullin et al., *Journal of Experimental Psychology: General*), people who spent five minutes writing a to-do list before bed fell asleep faster than those who wrote about completed tasks. Offload builds on that idea: unload the open loops, then rest. It guides you through a timed 2, 5, 10 or 15-minute session with soft pink noise and optional binaural beats.
 
 **Q: What are binaural beats and are they safe?**  
-A: **Binaural beats** are an auditory illusion created when two slightly different frequencies are played in each ear. Offload uses a **4Hz theta wave pattern** (200Hz left channel, 204Hz right channel) which research suggests may promote relaxation and pre-sleep brain states. They are generally considered safe for most people, but those with epilepsy or who are prone to seizures should consult a healthcare provider before use.
+A: **Binaural beats** are an auditory illusion created when two slightly different frequencies are played in each ear. Offload uses a **4Hz theta wave pattern** (200Hz left channel, 204Hz right channel). The evidence for binaural beats is mixed, so they are optional and off by default. They are generally considered low risk, but if you have epilepsy or a seizure disorder, speak with a clinician first. Silence is always an option.
 
 **Q: Can I use Offload without an internet connection?**  
 A: Yes! Offload is a **Progressive Web App (PWA)** that works entirely offline after the first visit. All features — brain dumping, dream journaling, sleep insights, stats, and audio — function without any internet connection. Your data never leaves your device.
@@ -363,19 +372,19 @@ A: Yes. Offload works on all modern browsers including Safari on iOS and Chrome 
 A: No. Offload has **zero backend, zero server, zero database**. All your brain dumps, dream journals, sleep insights, and personal data are stored exclusively in your browser's localStorage with optional AES-256-GCM encryption. We physically cannot access your data because we never receive it.
 
 **Q: Can I use voice input instead of typing?**  
-A: Yes. Offload includes **Web Speech API** integration for voice input during brain dump sessions. All voice processing happens locally in your browser — no audio is sent to any server.
+A: Yes. Voice input uses your **browser's built-in speech recognition**. In some browsers, such as Chrome, that service may send audio to the browser maker. Offload itself has no server and never receives your audio. If that matters to you, type instead.
 
 **Q: What is the closing ceremony?**  
 A: The **closing ceremony** is a symbolic visualization where your written thoughts transform into 200 rising particles in a WebGL animation. This creates a psychological boundary between your active day and restorative sleep, helping you mentally "release" your worries.
 
-**Q: How does the sentiment analysis work?**  
-A: Offload uses **client-side lexicon analysis** — a local dictionary of emotional words and phrases — to detect your emotional state in real-time as you write. No text is sent to any server or AI service. The analysis is entirely private and happens instantly in your browser.
+**Q: How does the sentiment hint work?**  
+A: Offload uses **client-side lexicon analysis** — a local word list on your device — to show how heavy your writing feels as you write. No text is sent to any server or AI service. The analysis is entirely private and happens instantly in your browser.
 
 **Q: Can I contribute to Offload?**  
 A: Yes. We welcome contributions from developers, UX designers, sleep researchers, audio engineers, and accessibility advocates. Please read [`CONTRIBUTING.md`](CONTRIBUTING.md) and ensure your contributions respect our privacy-first, zero-backend, zero-dependency principles.
 
 **Q: Is Offload a medical device or sleep treatment?**  
-A: No. Offload is a **wellness and journaling tool**, not a medical device or sleep disorder treatment. It is designed to support healthy sleep hygiene and mental decluttering practices. If you have chronic insomnia, sleep apnea, or other sleep disorders, please consult a healthcare professional.
+A: No. Offload is a **wellness and journaling tool**, not a medical device or sleep disorder treatment. It is designed to support healthy sleep hygiene and mental decluttering practices. If you have chronic insomnia, sleep apnea, or other sleep disorders, please consult a healthcare professional. If you are in crisis or danger, contact local emergency services. In India, Tele-MANAS is free on 14416.
 
 ---
 
